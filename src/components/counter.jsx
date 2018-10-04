@@ -4,11 +4,21 @@ class Counter extends Component {
   state = {
     count: 0
   };
+
+  // this style object get passed in the return below with this.styles
+  styles = {
+    fontSize: 50,
+    fontWeight: "bold"
+  };
+
   render() {
     return (
-      <React.Fragment>
-        <span>{this.formatCount()}</span> <button>Increment</button>
-      </React.Fragment>
+      <div>
+        <span style={this.styles} className="badge badge-primary m-2">
+          {this.formatCount()}
+        </span>
+        <button className="btn btn-secondary btn-sm">Increment</button>
+      </div>
     );
   }
 
